@@ -1,0 +1,6 @@
+-- clean qty and cost and copy to correct column
+-- replace all values in the character string so that only numbers and period(.) are left 
+-- using REGULAR EXPRESSION
+update tmpp_sfdcql t
+set t.qty = to_number(regexp_replace(t.dty_qty,'[^0-9/.]+','')) ,
+    t.cost = to_number(regexp_replace(t.dty_cost,'[^0-9/.]+',''));
