@@ -1,0 +1,6 @@
+-- general oracle script
+
+-- find objects in oracle that are dependent of other objects
+SELECT name, type, referenced_name, referenced_type
+FROM all_dependencies
+WHERE referenced_name = 'WORD_DEX';
